@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import CartIcon from "../UI/CartIcon";
 import classes from "./HeaderCartButton.module.css";
+import CartContext from "../../store/store";
 
 const HeaderCartButton = () => {
+  const ctx = useContext(CartContext);
+  console.log(ctx);
   return (
-    <button className={classes.button}>
-      <span className={classes.icon}>
-        <CartIcon />
-      </span>
-      <span>Your cart</span>
-      <span className={classes.badge}>3</span>
-    </button>
+    <>
+      <button onClick={ctx.onOpenCart} className={classes.button}>
+        <span className={classes.icon}>
+          <CartIcon />
+        </span>
+        <span>Your cart</span>
+        <span className={classes.badge}>3</span>
+      </button>
+    </>
   );
 };
 
