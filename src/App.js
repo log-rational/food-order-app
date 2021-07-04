@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./Components/Layout/Header";
 import Meals from "./Components/Meals/Meals";
 import Cart from "./Components/Cart/Cart";
-import CartContext, { CartContextProvider } from "./store/store";
+import CartContext from "./store/store";
 
 function App() {
   const ctx = useContext(CartContext);

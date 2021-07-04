@@ -13,7 +13,7 @@ const Cart = () => {
     </ul>
   );
   return (
-    <Modal>
+    <Modal onBackdropClick={ctx.onCloseCart}>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
