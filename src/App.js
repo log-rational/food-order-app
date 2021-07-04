@@ -4,19 +4,18 @@ import Header from "./Components/Layout/Header";
 import Meals from "./Components/Meals/Meals";
 import Cart from "./Components/Cart/Cart";
 import CartContext from "./store/store";
+import CartProvider from "./store/CartProvider";
 
 function App() {
   const ctx = useContext(CartContext);
-  console.log(ctx);
   return (
-    <div className="App">
-      <Header></Header>
-      <main>
-        <Meals></Meals>
-      </main>
-      Cart
-      {ctx.isOpen && <Cart></Cart>}
-    </div>
+      <div className="App">
+        {ctx.isOpen && <Cart></Cart>}
+        <Header></Header>
+        <main>
+          <Meals></Meals>
+        </main>
+      </div>
   );
 }
 
