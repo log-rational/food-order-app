@@ -9,9 +9,14 @@ const Cart = () => {
 
   const totalAmount = `£${ctx.totalAmount.toFixed(2)}`;
 
-  const cartItemRemoveHandler = () => {};
+  const cartItemRemoveHandler = (id) => {
+    ctx.removeItem(id);
+  };
 
-  const cartItemAddHandler = () => {};
+  const cartItemAddHandler = (item) => {
+    // console.log(item)
+    ctx.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul>
@@ -22,8 +27,8 @@ const Cart = () => {
             name={d.name}
             amount={d.amount}
             price={d.price}
-            onAdd={cartItemAddHandler.bind(null, d.id)}
-            onRemove={cartItemRemoveHandler.bind(null, d)}
+            onAdd={cartItemAddHandler.bind(null, d)}
+            onRemove={cartItemRemoveHandler.bind(null, d.id)}
           ></CartItem>
         );
       })}
