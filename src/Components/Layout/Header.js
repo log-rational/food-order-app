@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import mealsImage from "../../assets/meals.jpg";
 import HeaderCartButton from "./HeaderCartButton";
-
 import classes from "./Header.module.css";
 
 const Header = () => {
